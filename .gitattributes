@@ -1,0 +1,2 @@
+# Neurolucida morphology files (.asc) are data, not AGS Script source
+*.asc linguist-detectable=false
