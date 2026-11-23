@@ -1,0 +1,29 @@
+# --- build output ---
+build/
+out/
+cmake-build-*/
+CMakeUserPresets.json
+
+# --- Python ---
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+dist/
+
+# --- editors / OS ---
+.vscode/
+.idea/
+*.swp
+.DS_Store
+
+# --- third-party data that is NOT redistributed (see LICENSE) ---
+# Allen Cell Types reconstructions: downloaded locally, never shipped.
+data/validation/*
+!data/validation/README.md
+
+# Blue Brain clone archive (pool122): nothing in the code reads it, and the
+# default pool is data/morphologies_balanced/. Kept locally only.
+data/morphologies/*
+!data/morphologies/README.md

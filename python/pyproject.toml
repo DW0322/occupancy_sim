@@ -1,0 +1,20 @@
+[build-system]
+# >=77 for PEP 639 license expressions (the bare license = "MIT" below)
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "occsim"
+version = "5.1.0"
+description = "Analysis and figures for the occupancy simulation engine"
+authors = [{ name = "Daniel Evans", email = "de2424@essex.ac.uk" }]
+license = "MIT"
+requires-python = ">=3.9"
+dependencies = ["numpy>=2.0", "matplotlib>=3.9"]
+
+[project.scripts]
+# lets `occsim ...` be called from any directory once installed
+occsim = "occsim.__main__:main"
+
+[tool.setuptools]
+packages = ["occsim"]

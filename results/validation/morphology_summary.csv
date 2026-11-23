@@ -1,0 +1,11 @@
+# occsim morphology validation: 39 clone-free templates vs Allen Cell Types
+# measured through build/morph_stats, i.e. occupancy::load_template - the engine's own loader and 2D projection
+# 2D arbor span = max(bbox_w, bbox_h); pop sd is the sample sd (n-1)
+# comparison population is acute-slice tissue, NOT dissociated culture: passing means
+# 'these templates are typical cortical cells', not 'this is what a neuron on a scaffold looks like'
+# regenerated 2026-08-26; method in docs/RUNNING.md section 7
+metric,unit,pop_median,pop_p25,pop_p75,ours_median,pct_ours_in_pop_iqr,pct_ours_in_pop_mean_sd,n_pop,n_ours
+mean neurite spacing,um,27,18,43,28,82,97,113,39
+max path distance,um,578,375,718,738,44,79,113,39
+2D arbor span,um,550,433,698,867,18,21,113,39
+total projected length,um,9078,4293,14473,20654,23,33,113,39

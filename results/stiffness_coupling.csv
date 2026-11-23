@@ -1,0 +1,13 @@
+# occsim stiffness --coupling gradient  N=25 DIV=15 mig_speed=10 seed_frac=0.1 grid=30x30 map=stiffness_example_synthetic.csv map_div=15 units=kPa seeds=[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+# SYNTHETIC map - demonstrates the coupling mechanism, NOT a biological result.
+# CLUSTERED seeding: cells start in the central 0.1 of the field side, where the map averages 0.3277 kPa against 1.0145 over the whole map - 0.32x. The couplability tables in docs/INTEGRATION_NOTES.md were measured under UNIFORM seeding, so a response here is not evidence the map would couple for a uniformly seeded population, and a flat curve is not evidence it would not.
+# covwt_stiffness = sum(covered_px * stiffness) / sum(covered_px), post-processed from the compartment CSV; it cannot affect the simulation.
+# +ve stiff_weight steers down-gradient (toward soft), -ve up-gradient (toward stiff). Direction is contested - see docs/INTEGRATION_NOTES.md.
+stiff_weight,occ_mean,occ_sem,covwt_stiffness_mean,covwt_stiffness_sem,n_seeds
+-0.9,97.80411666666664,0.5173437676382522,1.011597398383236,0.0006036919530548807,12
+-0.6,97.5548,0.5167747259921318,1.0109477287590647,0.0009330241979293818,12
+-0.3,99.90060833333332,0.07458754613969659,1.0143027007587824,0.00013883599980465004,12
+0.0,99.308675,0.1886536862938888,1.01319124348151,0.0003554175010894201,12
+0.3,95.56715833333334,0.9838836664000672,1.0057276348275346,0.002015665459461824,12
+0.6,74.4795,2.5512886831952204,0.9501963557925702,0.008100402568717061,12
+0.9,73.39049166666666,2.4230594041998983,0.9469513706105546,0.00793388805496329,12

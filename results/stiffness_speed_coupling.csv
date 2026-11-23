@@ -1,0 +1,12 @@
+# occsim stiffness --coupling speed  N=25 DIV=15 mig_speed=10 seed_frac=0.1 grid=30x30 map=stiffness_bessel_synthetic.csv map_div=15 units=kPa seeds=[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+# SYNTHETIC map - demonstrates the coupling mechanism, NOT a biological result.
+# CLUSTERED seeding: cells start in the central 0.1 of the field side, where the map averages 0.3820 kPa against 0.1325 over the whole map - 2.88x. The couplability tables in docs/INTEGRATION_NOTES.md were measured under UNIFORM seeding, so a response here is not evidence the map would couple for a uniformly seeded population, and a flat curve is not evidence it would not.
+# soma_stiffness = mean map value under the final soma positions (engine SOMA_STIFFNESS line); soma-scale because coverage smooths over the arbor.
+# stiff_speed scales the step by the Elayan 2026 adhesion sigmoid; the default auto slope is negative (slower on stiff), so somata accumulate in stiff material and the readout rises.
+# Before quoting a trend below: on a J0^2 envelope most of the map's value range sits in a small central area, so a population mean barely moves. Judge the map against docs/INTEGRATION_NOTES.md, 'The measured tables to judge against'.
+stiff_speed,occ_mean,occ_sem,soma_stiffness_mean,soma_stiffness_sem,n_seeds
+0.0,99.308675,0.1886536862938888,0.13819083333333335,0.0031799485769458914,12
+0.25,99.25059166666666,0.2290917377643046,0.14064516666666665,0.0032891726942540214,12
+0.5,98.65745833333334,0.32327815058429454,0.15137899999999999,0.004740671147025749,12
+0.75,98.10055833333332,0.4776173569028862,0.16613775,0.006543376282055055,12
+1.0,97.16969999999999,0.6564312324065547,0.18045766666666666,0.008694322563511422,12
